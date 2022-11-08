@@ -1,0 +1,74 @@
+﻿<Window x:Class="ZenmarketScanner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZenmarketScanner"
+        mc:Ignorable="d"
+        Title="Zenmarket Scanner" Height="400" Width="600" >
+
+    <Border Padding="10">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="0, 0, 10, 0" Width="200" > <Bold>Name</Bold> </TextBlock>
+                <TextBlock Margin="0, 0, 0, 0" Width="290"> <Bold>Zenmarket Search</Bold></TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="NameTxtbox" Width="200" Margin="0, 0, 10, 0" TextChanged="NameTxtbox_TextChanged"/>
+                <TextBox x:Name="SearchTxtbox" Width="200" Margin="0, 0, 0, 0" TextChanged="SearchTxtbox_TextChanged"/>
+                <Button x:Name="SearchBtn" Margin="10, 0, 0, 0" Content="Search n Save" IsEnabled="False" Click="SearchBtn_Click"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="0, 0, 10, 0" Width="200" > <Bold>Saved Searches</Bold></TextBlock>
+                <TextBlock Margin="0, 0, 0, 0" Width="80"> <Bold>Search Term</Bold></TextBlock>
+                <Button x:Name="OpenBtn" Content="Open" Click="OpenBtn_Click" Height="16" FontSize="8"/>
+                <TextBlock Margin="98, 0, 0, 0" Width="200"><Bold>Date Last Scanned</Bold></TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <ComboBox x:Name="SavedCombox" Margin="0, 0, 10, 0" Width="200" SelectionChanged="SavedCombox_SelectionChanged"/>
+                <TextBlock x:Name="SearchTermTxt" Margin="0, 0, 0, 0" Width="200">Swauss</TextBlock>
+                <TextBlock x:Name="DateTxt" Margin="0, 0, 0, 0" Width="100" FontSize="11"></TextBlock>
+                <Button x:Name="ScanBtn" Margin="10, 0, 0, 0" Content="SCAN" IsEnabled="False" Click="ScanBtn_Click"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <ProgressBar x:Name="Progbar" Margin="0, 5, 0, 0" Width="250" Height="20"/>
+                <TextBlock x:Name="ProgTxt" Margin="5, 5, 0, 0" Width="60" FontSize="15"></TextBlock>
+                <CheckBox x:Name="IsDefaultChkbox" Margin="0, 8, 0, 0" IsEnabled="False" Click="IsDefaultChkbox_Click">Default Item</CheckBox>
+                <Button x:Name="DeleteBtn" Margin="10, 5, 0, 0" IsEnabled="False" Click="DeleteBtn_Click">Delete</Button>
+                <TextBlock Margin="10, 7, 0, 0"><Bold>Searched: </Bold></TextBlock>
+                <TextBlock x:Name="PagesSearchedTxt" Margin="5, 7, 0, 0"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0, 10, 0, 0">
+                <TextBlock Margin="40, 0, 5, 0"><Bold>Items Added:</Bold></TextBlock>
+                <TextBlock x:Name="AddedPrice" Margin="0, 0, 0, 0" Width="120"></TextBlock>
+                <TextBlock Margin="90, 0, 5, 0"><Bold>Items Sold:</Bold></TextBlock>
+                <TextBlock x:Name="SoldPrice" Margin="0, 0, 0, 0"  Width="120"></TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="AddedLeftBtn" Width="30" Height="50" Margin="10, 0, 0, 0" IsEnabled="False" Click="AddedLeftBtn_Click">&lt;</Button>
+                <Border Width="200" Height="200" Margin="0, 0, 0, 0" Background="Gray">
+                    <Image x:Name="AddedImg" MouseLeftButtonDown="AddedImg_MouseLeftButtonDown"></Image>
+                </Border>
+                <Button x:Name="AddedRightBtn" Width="30" Height="50" Margin="0, 0, 0, 0" IsEnabled="False" Click="AddedRightBtn_Click">&gt;</Button>
+
+                <Button x:Name="SoldLeftBtn" Width="30" Height="50" Margin="30, 0, 0, 0" IsEnabled="False" Click="SoldLeftBtn_Click">&lt;</Button>
+                <Border Width="200" Height="200" Margin="0, 0, 0, 0" Background="Gray">
+                    <Image x:Name="SoldImg" MouseLeftButtonDown="SoldImg_MouseLeftButtonDown"></Image>
+                </Border>
+                <Button x:Name="SoldRightBtn" Width="30" Height="50" Margin="0, 0, 0, 0" IsEnabled="False" Click="SoldRightBtn_Click">&gt;</Button>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="AddedNumTxt" Margin="130, 0, 0, 0"></TextBlock>
+                <TextBlock x:Name="SoldNumTxt" Margin="270, 0, 0, 0"></TextBlock>
+            </StackPanel>
+
+        </StackPanel>
+    </Border>
+</Window>
